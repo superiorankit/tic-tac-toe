@@ -1,0 +1,17 @@
+.buttonMain{
+    background-color: #bb00ff;
+    color: #ffa6a6;
+    padding: 10px 20px;
+    border-radius: 21px;
+    font-weight: bold;
+    transition: all 0.1s;
+}
+
+.buttonMain:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.buttonMain:active{
+    transform: scale(0.9);
+}

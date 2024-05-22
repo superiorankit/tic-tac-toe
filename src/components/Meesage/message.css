@@ -1,0 +1,12 @@
+.messageMain{
+    font-size: 32px;
+    font-weight: bold;
+    border: 2px solid #E49BFF;
+    width: 30%;
+    height: 33%;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    background-color: #bb00ff;
+    color: #ffa6a6;
+}

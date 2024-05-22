@@ -1,0 +1,10 @@
+.boxMain{
+    border: 3px solid #C738BD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    font-weight: bolder;
+    font-style: italic;
+    border-radius: 6px;
+}
