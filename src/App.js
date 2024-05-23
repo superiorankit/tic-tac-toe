@@ -2,7 +2,7 @@ import Index from "./components";
 
 function App() {
   return (
-    <Index/>
+    <Index />
   );
 }
 

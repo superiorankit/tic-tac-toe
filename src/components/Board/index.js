@@ -6,7 +6,7 @@ import { tictactoeContext } from '../../context/tictactoeContext';
 
 const Board = () => {
 
-    const {turn,reset,arr} = useContext(tictactoeContext);
+    const { turn, reset, arr } = useContext(tictactoeContext);
 
     return (
         <div className='boardMain'>

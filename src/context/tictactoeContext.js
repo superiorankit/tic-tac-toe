@@ -2,9 +2,9 @@ import { createContext, useState } from "react";
 
 export const tictactoeContext = createContext();
 
-export const TicTacToeProvider = ({children})=>{
-    
-    
+export const TicTacToeProvider = ({ children }) => {
+
+
     const [arr, setArr] = useState(Array(9).fill(""));
     const [winner, setWinner] = useState(null);
     const [turn, setTurn] = useState("X");
@@ -72,7 +72,7 @@ export const TicTacToeProvider = ({children})=>{
 
     return (
         <tictactoeContext.Provider value={{
-            arr,winner,turn, checkWin, checkDraw, updateValue,reset
+            arr, winner, turn, checkWin, checkDraw, updateValue, reset
         }}>
             {children}
         </tictactoeContext.Provider>
