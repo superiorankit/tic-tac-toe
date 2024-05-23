@@ -1,22 +1,8 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .boardMain{
-    width: 100%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    background-color: #850F8D;
-    color: #E49BFF;
-}
-
-.boardMain h1{
-    font-size: 45px;
 }
 
 .board{
@@ -29,6 +15,7 @@
 
 .turnTxt{
     font-size: 30px;
+    margin: 20px 0;
 }
 
 .turnTxt span{

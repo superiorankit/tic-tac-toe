@@ -1,10 +1,10 @@
 import React from 'react'
-import Board from './Board'
+import TicTacToe from './TicTacToe'
 
 const Index = () => {
   return (
     <div>
-      <Board/>
+      <TicTacToe/>
     </div>
   )
 }
