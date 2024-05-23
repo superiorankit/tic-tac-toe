@@ -57,7 +57,6 @@ const TicTacToe = () => {
                 setWinner(turn);
             }
             else if (checkDraw()) {
-                alert("draw")
                 setWinner("draw")
             }
             else {
@@ -79,7 +78,7 @@ const TicTacToe = () => {
     <h1>Tic Tac Toe</h1>
     {winner ?
         <>
-            <Message text={winner === "draw" ? `Math Draw` : `Winner ${winner}`} />
+            <Message text={winner === "draw" ? `Math Draw` : `Winner ${winner === "X"?'Player 1 (X)':'Player 2 (O)'}`} />
             <Button text="Start New Match" handle={reset} />
         </> :
         <>
