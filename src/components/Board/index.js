@@ -1,16 +1,19 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Box from '../Box';
 import "./board.css"
 import Button from '../Button';
+import { tictactoeContext } from '../../context/tictactoeContext';
 
-const Board = ({arr,turn,updateValue,reset}) => {
+const Board = () => {
+
+    const {turn,reset,arr} = useContext(tictactoeContext);
 
     return (
         <div className='boardMain'>
 
             <div className='board'>
                 {arr.map((text, index) => {
-                    return <Box key={index} index={index} text={text} turn={turn} updateValue={updateValue} />
+                    return <Box key={index} index={index} text={text} />
                 })}
             </div>
 

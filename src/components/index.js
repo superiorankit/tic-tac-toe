@@ -1,10 +1,13 @@
 import React from 'react'
 import TicTacToe from './TicTacToe'
+import { TicTacToeProvider } from '../context/tictactoeContext'
 
 const Index = () => {
   return (
     <div>
-      <TicTacToe/>
+      <TicTacToeProvider>
+        <TicTacToe />
+      </TicTacToeProvider>
     </div>
   )
 }

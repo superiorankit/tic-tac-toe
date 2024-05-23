@@ -1,93 +1,30 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Board from '../Board';
 import Message from '../Meesage';
 import Button from '../Button';
 import "./tictactoe.css"
+import { tictactoeContext } from '../../context/tictactoeContext';
 
 const TicTacToe = () => {
 
-    
-    const [arr, setArr] = useState(Array(9).fill(""));
-    const [winner, setWinner] = useState(null);
-    const [turn, setTurn] = useState("X");
+    const { winner, reset } = useContext(tictactoeContext);
 
 
-    const checkWin = () => {
-
-        const combos = [
-            [0, 1, 2],
-            [3, 4, 5],
-            [6, 7, 8],
-            [0, 3, 6],
-            [1, 4, 7],
-            [2, 5, 8],
-            [0, 4, 8],
-            [2, 4, 6],
-        ];
-
-        for (let arrComb of combos) {
-            const [ind1, ind2, ind3] = arrComb;
-            if (arr[ind1] && arr[ind1] === arr[ind2] && arr[ind1] === arr[ind3]) {
-                return turn;
+    return (
+        <div className='main'>
+            <h1>Tic Tac Toe</h1>
+            {winner ?
+                <>
+                    <Message text={winner === "draw" ? `Math Draw` : `Winner ${winner === "X" ? 'Player 1 (X)' : 'Player 2 (O)'}`} />
+                    <Button text="Start New Match" handle={reset} />
+                </> :
+                <>
+                    <Board />
+                </>
             }
 
-        }
-
-
-        return null;
-
-    }
-
-    const checkDraw = () => {
-        for (let box of arr) {
-            if (!box) return false;
-        }
-
-        return true;
-    }
-
-
-    const updateValue = (index, turn) => {
-        if (!arr[index]) {
-            arr[index] = turn;
-            setArr([...arr]);
-
-
-            if (checkWin()) {
-                setWinner(turn);
-            }
-            else if (checkDraw()) {
-                setWinner("draw")
-            }
-            else {
-                setTurn(turn === "X" ? "O" : "X");
-            }
-        }
-
-    }
-
-    const reset = () => {
-        setArr(Array(9).fill(""));
-        setWinner(null);
-        setTurn("X");
-    }
-
-
-  return (
-    <div className='main'>
-    <h1>Tic Tac Toe</h1>
-    {winner ?
-        <>
-            <Message text={winner === "draw" ? `Math Draw` : `Winner ${winner === "X"?'Player 1 (X)':'Player 2 (O)'}`} />
-            <Button text="Start New Match" handle={reset} />
-        </> :
-        <>
-            <Board arr={arr} turn={turn} updateValue={updateValue} reset={reset}/>
-        </>
-    }
-
-</div>
-  )
+        </div>
+    )
 }
 
 export default TicTacToe
